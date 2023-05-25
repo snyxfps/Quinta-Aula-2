@@ -1,0 +1,10 @@
+# Inicializando a variável soma como zero
+soma = 0
+
+# Loop para gerar os números pares em ordem decrescente
+for num in range(50, 0, -2):
+  print(num)
+  soma += num  # Adicionando o número à soma
+
+# Imprimindo o valor da soma
+print("Soma dos números pares: ", soma)
