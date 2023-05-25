@@ -1,0 +1,33 @@
+preco_tabela = float(input("Digite o preço de tabela: R$ "))
+num_parcelas = int(input("Digite o número de parcelas (entre 2 e 15): "))
+
+if num_parcelas == 1:  # à vista com desconto de 2,5%
+  preco_total = preco_tabela * 0.975
+  valor_parcela = preco_total
+  print("PREÇO DE TABELA: R$ {:.2f}".format(preco_tabela))
+  print("NUM. DE VEZES: {}".format(num_parcelas))
+  print("VALOR DE CADA PARCELA: R$ {:.2f}".format(valor_parcela))
+  print("PREÇO TOTAL: R$ {:.2f}".format(preco_total))
+elif num_parcelas >= 2 and num_parcelas <= 5:  # de 2 até 5 vezes
+  preco_total = preco_tabela
+  valor_parcela = preco_total / num_parcelas
+  print("PREÇO DE TABELA: R$ {:.2f}".format(preco_tabela))
+  print("NUM. DE VEZES: {}".format(num_parcelas))
+  print("VALOR DE CADA PARCELA: R$ {:.2f}".format(valor_parcela))
+  print("PREÇO TOTAL: R$ {:.2f}".format(preco_total))
+elif num_parcelas >= 6 and num_parcelas <= 10:  # de 6 até 10 vezes com juros de 6%
+  preco_total = preco_tabela * 1.06
+  valor_parcela = preco_total / num_parcelas
+  print("PREÇO DE TABELA: R$ {:.2f}".format(preco_tabela))
+  print("NUM. DE VEZES: {}".format(num_parcelas))
+  print("VALOR DE CADA PARCELA: R$ {:.2f}".format(valor_parcela))
+  print("PREÇO TOTAL: R$ {:.2f}".format(preco_total))
+elif num_parcelas >= 11 and num_parcelas <= 15:  # de 11 até 15 vezes com juros de 13%
+  preco_total = preco_tabela * 1.13
+  valor_parcela = preco_total / num_parcelas
+  print("PREÇO DE TABELA: R$ {:.2f}".format(preco_tabela))
+  print("NUM. DE VEZES: {}".format(num_parcelas))
+  print("VALOR DE CADA PARCELA: R$ {:.2f}".format(valor_parcela))
+  print("PREÇO TOTAL: R$ {:.2f}".format(preco_total))
+else:  # número de parcelas inválido
+  print("Número de parcelas inválido. Digite um número entre 2 e 15.")
