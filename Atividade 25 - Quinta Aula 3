@@ -1,0 +1,15 @@
+A = int(input("Digite o valor de A: "))
+B = int(input("Digite o valor de B: "))
+
+soma_pares = 0
+for i in range(A):
+  if i % 2 == 0:
+    soma_pares += i
+
+soma_impares = 0
+for i in range(A + 1, B):
+  if i % 2 != 0:
+    soma_impares += i
+
+print("A soma dos pares menores que A é:", soma_pares)
+print("A soma dos ímpares entre A e B é:", soma_impares)
