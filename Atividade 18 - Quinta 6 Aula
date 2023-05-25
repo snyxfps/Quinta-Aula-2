@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        int var1 = lerVariavel();
+        int var2 = lerVariavel();
+        int var3 = lerVariavel();
+
+        int soma = var1 + var2 + var3;
+        System.out.println("A soma das variáveis é: " + soma);
+    }
+
+    public static int lerVariavel() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Digite um valor inteiro: ");
+        int valor = scanner.nextInt();
+        return valor;
+    }
+}
