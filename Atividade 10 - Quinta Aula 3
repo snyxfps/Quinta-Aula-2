@@ -1,0 +1,8 @@
+while True:
+  num = int(input("Digite um número: "))
+  if num == 0:
+    break
+  elif num > 0:
+    print("O número é POSITIVO.")
+  else:
+    print("O número é NEGATIVO.")
