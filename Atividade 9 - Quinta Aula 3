@@ -1,0 +1,19 @@
+# inicializando as variáveis para o menor e o maior valores
+menor = None
+maior = None
+
+# lendo 50 valores
+for i in range(50):
+    valor = float(input(f'Digite o valor {i+1}: '))
+
+    # atualizando o menor valor
+    if menor is None or valor < menor:
+        menor = valor
+
+    # atualizando o maior valor
+    if maior is None or valor > maior:
+        maior = valor
+
+# exibindo o resultado
+print(f'O menor valor digitado foi {menor:.2f}')
+print(f'O maior valor digitado foi {maior:.2f}')
