@@ -1,0 +1,49 @@
+# inicialização do dicionário de contagem de votos
+votos = {
+    1: 0,  # candidato A
+    2: 0,  # candidato B
+    3: 0,  # candidato C
+    4: 0,  # candidato D
+    5: 0,  # votos nulos
+    6: 0,  # votos em branco
+}
+
+total_votantes = 0
+total_abstencoes = 0
+
+# leitura dos votos até que o código do candidato seja igual a zero
+while True:
+    codigo = int(input("Digite o código do candidato (ou 0 para encerrar): "))
+    if codigo == 0:
+        break
+    
+    # atualização da contagem de votos
+    if codigo in votos:
+        votos[codigo] += 1
+    elif codigo == 5:  # voto nulo
+        votos[5] += 1
+    elif codigo == 6:  # voto em branco
+        votos[6] += 1
+    
+    total_votantes += 1
+
+# cálculo dos resultados
+total_validos = sum(votos.values()) - votos[5] - votos[6]
+percentuais_votos = {c: (v / total_votantes) * 100 for c, v in votos.items()}
+percentuais_validos = {c: (v / total_validos) * 100 for c, v in votos.items() if c not in [5, 6]}
+percentual_abstencao = (total_abstencoes / (total_votantes + total_abstencoes)) * 100
+
+# impressão dos resultados
+print("Total de votos para cada candidato:")
+for c in votos:
+    print(f"Candidato {c}: {votos[c]} votos")
+
+print(f"Total de votos nulos: {votos[5]} votos")
+print(f"Total de votos em branco: {votos[6]} votos")
+print(f"Percentual de votos de cada candidato em relação ao total de votos:")
+for c in percentuais_votos:
+    print(f"Candidato {c}: {percentuais_votos[c]:.2f}%")
+print(f"Percentual de votos válidos de cada candidato em relação ao total de votos válidos:")
+for c in percentuais_validos:
+    print(f"Candidato {c}: {percentuais_validos[c]:.2f}%")
+print(f"Percentual de abstenções: {percentual_abstencao:.2f}%")
