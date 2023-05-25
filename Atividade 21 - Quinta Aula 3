@@ -1,0 +1,8 @@
+maior = float('-inf')  # Inicializa o maior valor como o menor possível
+
+for i in range(15):
+    num = float(input("Digite um número: "))
+    if num > maior:
+        maior = num
+
+print("O maior valor digitado foi:", maior)
