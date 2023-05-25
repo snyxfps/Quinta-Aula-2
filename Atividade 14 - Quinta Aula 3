@@ -1,0 +1,10 @@
+n = int(input("Digite um número inteiro positivo: "))
+
+soma = 0
+for i in range(1, n):
+    print(i)
+    soma += i
+
+media = soma / (n - 1)
+print("Soma:", soma)
+print("Média:", media)
