@@ -1,1 +1,19 @@
+public class Main {
+    public static void main(String[] args) {
+        int valor = 24;
+        int quantidadeDivisores = calcularQuantidadeDivisores(valor);
+        System.out.println("Número de divisores de " + valor + ": " + quantidadeDivisores);
+    }
 
+    public static int calcularQuantidadeDivisores(int valor) {
+        int quantidadeDivisores = 0;
+
+        for (int i = 1; i <= valor; i++) {
+            if (valor % i == 0) {
+                quantidadeDivisores++;
+            }
+        }
+
+        return quantidadeDivisores;
+    }
+}
