@@ -1,0 +1,9 @@
+ano_nascimento = int(input("Digite o ano de nascimento: "))
+ano_atual = 2023  # Considerando que estamos no ano de 2023
+
+idade = ano_atual - ano_nascimento
+
+if idade >= 16:
+    print("Você poderá votar este ano!")
+else:
+    print("Você não poderá votar este ano.")
