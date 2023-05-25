@@ -1,0 +1,41 @@
+# Inicializa as variáveis de contagem
+votos_a = 0
+votos_b = 0
+votos_c = 0
+votos_d = 0
+votos_nulo = 0
+votos_branco = 0
+
+# Loop para leitura dos votos
+while True:
+    # Lê o código do voto
+    codigo_voto = int(input("Digite o código do voto (1-4 para candidatos, 5 para nulo, 6 para branco): "))
+
+    # Verifica o código do voto e incrementa a variável correspondente
+    if codigo_voto == 1:
+        votos_a += 1
+    elif codigo_voto == 2:
+        votos_b += 1
+    elif codigo_voto == 3:
+        votos_c += 1
+    elif codigo_voto == 4:
+        votos_d += 1
+    elif codigo_voto == 5:
+        votos_nulo += 1
+    elif codigo_voto == 6:
+        votos_branco += 1
+    else:
+        # Código inválido, encerra o loop
+        break
+
+# Calcula o total de votos válidos
+total_votos = votos_a + votos_b + votos_c + votos_d
+
+# Imprime os resultados
+print("Resultado da Eleição:")
+print(f"Votos para candidato A: {votos_a} ({votos_a/total_votos*100:.2f}%)")
+print(f"Votos para candidato B: {votos_b} ({votos_b/total_votos*100:.2f}%)")
+print(f"Votos para candidato C: {votos_c} ({votos_c/total_votos*100:.2f}%)")
+print(f"Votos para candidato D: {votos_d} ({votos_d/total_votos*100:.2f}%)")
+print(f"Votos nulos: {votos_nulo} ({votos_nulo/total_votos*100:.2f}%)")
+print(f"Votos em branco: {votos_branco} ({votos_branco/total_votos*100:.2f}%)")
