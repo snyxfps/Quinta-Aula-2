@@ -1,1 +1,13 @@
+public class Main {
+    public static void main(String[] args) {
+        int n = 5;
+        calcularTabuada(n);
+    }
 
+    public static void calcularTabuada(int n) {
+        for (int i = 1; i <= n; i++) {
+            int resultado = i * n;
+            System.out.println(i + " x " + n + " = " + resultado);
+        }
+    }
+}
