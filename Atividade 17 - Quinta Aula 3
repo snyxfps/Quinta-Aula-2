@@ -1,0 +1,6 @@
+senha = 0
+while senha != 2807:
+  senha = int(input("Digite a senha: "))
+  if senha != 2807:
+    print("SENHA INVÁLIDA")
+print("ACESSO PERMITIDO")
