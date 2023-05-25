@@ -1,0 +1,19 @@
+public class Main {
+    public static void main(String[] args) {
+        int valor = 5;
+        long fatorial = calcularFatorial(valor);
+        System.out.println("Fatorial de " + valor + ": " + fatorial);
+    }
+
+    public static long calcularFatorial(int valor) {
+        if (valor == 0 || valor == 1) {
+            return 1;
+        } else {
+            long fatorial = 1;
+            for (int i = 2; i <= valor; i++) {
+                fatorial *= i;
+            }
+            return fatorial;
+        }
+    }
+}
