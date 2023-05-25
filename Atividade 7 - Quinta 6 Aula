@@ -1,0 +1,12 @@
+public class Main {
+    public static void main(String[] args) {
+        int idadeAnos = 25;
+        int idadeDias = calcularIdadeEmDias(idadeAnos);
+        System.out.println("Idade em dias: " + idadeDias);
+    }
+
+    public static int calcularIdadeEmDias(int idadeAnos) {
+        int idadeDias = idadeAnos * 365;
+        return idadeDias;
+    }
+}
