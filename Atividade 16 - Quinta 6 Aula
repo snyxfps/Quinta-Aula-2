@@ -1,0 +1,31 @@
+public class Main {
+    public static void main(String[] args) {
+        int n = 10;
+        char operador = '+';
+        int total = calcularSomatorio(n, operador);
+        System.out.println("Somatório: " + total);
+    }
+
+    public static int calcularSomatorio(int n, char operador) {
+        int total = 0;
+
+        if (operador == '+') {
+            for (int i = 1; i <= n; i++) {
+                total += i;
+            }
+        } else if (operador == '-') {
+            for (int i = 1; i <= n; i++) {
+                total -= i;
+            }
+        } else if (operador == '*') {
+            total = 1;
+            for (int i = 1; i <= n; i++) {
+                total *= i;
+            }
+        } else {
+            throw new IllegalArgumentException("Operador inválido. Informe '+' para somatório, '-' para subtração ou '*' para multiplicação.");
+        }
+
+        return total;
+    }
+}
