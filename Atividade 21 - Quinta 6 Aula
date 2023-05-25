@@ -1,0 +1,58 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        List<Double> salarios = new ArrayList<>();
+        List<Integer> numFilhos = new ArrayList<>();
+        Scanner scanner = new Scanner(System.in);
+
+        char continuar;
+        do {
+            System.out.print("Digite o salário do habitante: R$");
+            double salario = scanner.nextDouble();
+            salarios.add(salario);
+
+            System.out.print("Digite o número de filhos do habitante: ");
+            int filhos = scanner.nextInt();
+            numFilhos.add(filhos);
+
+            System.out.print("Deseja continuar? (S/N): ");
+            continuar = scanner.next().charAt(0);
+        } while (continuar == 'S' || continuar == 's');
+
+        calcularEstatisticas(salarios, numFilhos);
+    }
+
+    public static void calcularEstatisticas(List<Double> salarios, List<Integer> numFilhos) {
+        double mediaSalario = 0;
+        double maiorSalario = 0;
+        int totalPessoas = salarios.size();
+        int numPessoasSalarioAte350 = 0;
+        int totalFilhos = 0;
+
+        for (int i = 0; i < totalPessoas; i++) {
+            double salario = salarios.get(i);
+            totalFilhos += numFilhos.get(i);
+            mediaSalario += salario;
+
+            if (salario > maiorSalario) {
+                maiorSalario = salario;
+            }
+
+            if (salario <= 350) {
+                numPessoasSalarioAte350++;
+            }
+        }
+
+        mediaSalario /= totalPessoas;
+        double mediaFilhos = (double) totalFilhos / totalPessoas;
+        double percentualSalarioAte350 = (double) numPessoasSalarioAte350 / totalPessoas * 100;
+
+        System.out.println("Média de salário da população: R$" + mediaSalario);
+        System.out.println("Média de filhos por habitante: " + mediaFilhos);
+        System.out.println("Maior salário: R$" + maiorSalario);
+        System.out.printf("Percentual de pessoas com salário até R$350,00: %.2f%%\n", percentualSalarioAte350);
+    }
+}
