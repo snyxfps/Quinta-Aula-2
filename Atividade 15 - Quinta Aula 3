@@ -1,0 +1,30 @@
+# inicializa as variáveis de contagem dos intervalos
+intervalo1 = 0
+intervalo2 = 0
+intervalo3 = 0
+intervalo4 = 0
+
+# leitura do primeiro número
+num = float(input("Digite um número: "))
+
+# enquanto o número lido for positivo ou zero
+while num >= 0:
+
+  # verifica em qual intervalo o número está e incrementa a variável correspondente
+  if num >= 0 and num <= 25:
+    intervalo1 += 1
+  elif num >= 26 and num <= 50:
+    intervalo2 += 1
+  elif num >= 51 and num <= 75:
+    intervalo3 += 1
+  elif num >= 76 and num <= 100:
+    intervalo4 += 1
+
+  # lê o próximo número
+  num = float(input("Digite um número: "))
+
+# imprime os resultados
+print("Quantidade de números no intervalo [0,25]: ", intervalo1)
+print("Quantidade de números no intervalo [26,50]: ", intervalo2)
+print("Quantidade de números no intervalo [51,75]: ", intervalo3)
+print("Quantidade de números no intervalo [76,100]: ", intervalo4)
