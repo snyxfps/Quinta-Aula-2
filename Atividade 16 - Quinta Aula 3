@@ -1,0 +1,11 @@
+while True:
+    valor1 = float(input("Informe o primeiro valor: "))
+    valor2 = float(input("Informe o segundo valor: "))
+
+    if valor1 == valor2:
+        break
+
+    if valor1 < valor2:
+        print("A dupla foi informada em ordem crescente")
+    else:
+        print("A dupla foi informada em ordem decrescente")
