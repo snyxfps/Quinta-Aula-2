@@ -1,0 +1,20 @@
+codigo = 0
+soma_precos_custo = 0
+soma_precos_novos = 0
+qtd_produtos = 0
+
+while codigo >= 0:
+    codigo = int(input("Digite o código do produto (negativo para encerrar): "))
+    if codigo >= 0:
+        preco_custo = float(input("Digite o preço de custo do produto: "))
+        preco_novo = preco_custo * 1.2
+        print(f"O preço novo do produto {codigo} é {preco_novo:.2f}")
+        soma_precos_custo += preco_custo
+        soma_precos_novos += preco_novo
+        qtd_produtos += 1
+
+media_precos_custo = soma_precos_custo / qtd_produtos
+media_precos_novos = soma_precos_novos / qtd_produtos
+
+print(f"A média dos preços de custo é {media_precos_custo:.2f}")
+print(f"A média dos preços novos é {media_precos_novos:.2f}")
