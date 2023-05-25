@@ -1,0 +1,45 @@
+idade = 0
+salario = 0
+media_salario = 0
+maior_idade = 0
+menor_idade = 200
+media_idade_homens = 0
+quantidade_mulheres_salario = 0
+quantidade_mulheres = 0
+quantidade_homens = 0
+
+while idade >= 0:
+  idade = int(
+    input(
+      "Digite a idade (digite um número negativo para encerrar a entrada de dados): "
+    ))
+  if idade >= 0:
+    sexo = input("Digite o sexo (M/F): ")
+    salario = float(input("Digite o salário: "))
+
+    if idade > maior_idade:
+      maior_idade = idade
+
+    if idade < menor_idade:
+      menor_idade = idade
+
+    if sexo == "M":
+      media_idade_homens = (media_idade_homens * quantidade_homens +
+                            idade) / (quantidade_homens + 1)
+      quantidade_homens = quantidade_homens + 1
+
+    if sexo == "F":
+      quantidade_mulheres = quantidade_mulheres + 1
+      if salario <= 1000:
+        quantidade_mulheres_salario = quantidade_mulheres_salario + 1
+
+    media_salario = (media_salario *
+                     (quantidade_homens + quantidade_mulheres) +
+                     salario) / (quantidade_homens + quantidade_mulheres)
+
+print("A média de salário do grupo é:", media_salario)
+print("A maior idade do grupo é:", maior_idade)
+print("A menor idade do grupo é:", menor_idade)
+print("A média da idade dos homens é:", media_idade_homens)
+print("A quantidade de mulheres com salário até R$1000,00 é:",
+      quantidade_mulheres_salario)
