@@ -1,0 +1,39 @@
+# Solicita a quantidade de alunos da turma
+qtd_alunos = int(input("Informe a quantidade de alunos da turma: "))
+
+# Inicializa as variáveis de soma e contadores
+soma_notas = 0
+maior_nota = 0
+menor_nota = 10  # Assume que todas as notas serão menores ou iguais a 10
+qtd_aprovados = 0
+qtd_reprovados = 0
+
+# Loop para ler as notas e calcular as estatísticas da turma
+for i in range(qtd_alunos):
+    # Solicita a nota do aluno atual
+    nota = float(input(f"Informe a nota do aluno {i+1}: "))
+
+    # Atualiza a soma das notas
+    soma_notas += nota
+
+    # Atualiza a maior e a menor nota
+    if nota > maior_nota:
+        maior_nota = nota
+    if nota < menor_nota:
+        menor_nota = nota
+
+    # Conta a quantidade de aprovados e reprovados
+    if nota >= 6:
+        qtd_aprovados += 1
+    else:
+        qtd_reprovados += 1
+
+# Calcula a média da turma
+media_turma = soma_notas / qtd_alunos
+
+# Imprime as estatísticas da turma
+print(f"Média da turma: {media_turma:.2f}")
+print(f"Maior nota da turma: {maior_nota}")
+print(f"Menor nota da turma: {menor_nota}")
+print(f"Quantidade de aprovados: {qtd_aprovados}")
+print(f"Quantidade de reprovados: {qtd_reprovados}")
