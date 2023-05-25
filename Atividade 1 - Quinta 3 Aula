@@ -1,0 +1,3 @@
+palavra = "PROGRAMACAO"
+for i in range(5):
+  print(palavra)
