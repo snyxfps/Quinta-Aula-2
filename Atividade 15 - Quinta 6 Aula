@@ -1,0 +1,29 @@
+public class Main {
+    public static void main(String[] args) {
+        double nota1 = 7.5;
+        double nota2 = 8.0;
+        double nota3 = 6.5;
+
+        double media;
+        calcularMedia(nota1, nota2, nota3, 'A', media);
+        System.out.println("Média Aritmética: " + media);
+
+        calcularMedia(nota1, nota2, nota3, 'P', media);
+        System.out.println("Média Ponderada: " + media);
+
+        calcularMedia(nota1, nota2, nota3, 'H', media);
+        System.out.println("Média Harmônica: " + media);
+    }
+
+    public static void calcularMedia(double nota1, double nota2, double nota3, char letra, double media) {
+        if (letra == 'A') {
+            media = (nota1 + nota2 + nota3) / 3;
+        } else if (letra == 'P') {
+            media = (5 * nota1 + 3 * nota2 + 2 * nota3) / (5 + 3 + 2);
+        } else if (letra == 'H') {
+            media = 3 / ((1 / nota1) + (1 / nota2) + (1 / nota3));
+        } else {
+            throw new IllegalArgumentException("Letra inválida. Informe 'A' para média aritmética, 'P' para média ponderada ou 'H' para média harmônica.");
+        }
+    }
+}
