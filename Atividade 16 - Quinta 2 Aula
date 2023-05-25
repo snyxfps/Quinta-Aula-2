@@ -1,0 +1,22 @@
+# Lê os dois números inteiros
+num1 = int(input("Digite o primeiro número inteiro: "))
+num2 = int(input("Digite o segundo número inteiro: "))
+
+# Verifica se os números são iguais
+if num1 == num2:
+  print("São iguais")
+else:
+  # Verifica se o primeiro número é par
+  if num1 % 2 == 0:
+    num3 = int(input("Digite o terceiro número inteiro: "))
+    maior = max(num1, num2, num3)
+    print("Maior valor encontrado: ", maior)
+  else:
+    num3 = int(input("Digite o terceiro número inteiro: "))
+    num4 = int(input("Digite o quarto número inteiro: "))
+    maior1 = max(num1, num2)
+    maior2 = max(num3, num4)
+    if maior1 > maior2:
+      print("Maior valor encontrado: ", maior1)
+    else:
+      print("Maior valor encontrado: ", maior2)
