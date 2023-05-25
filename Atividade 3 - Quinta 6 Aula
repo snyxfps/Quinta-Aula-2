@@ -1,0 +1,49 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        int[] valores = lerValores(50);
+        int maior = encontrarMaiorValor(valores);
+        int menor = encontrarMenorValor(valores);
+
+        System.out.println("Maior valor: " + maior);
+        System.out.println("Menor valor: " + menor);
+    }
+
+    public static int[] lerValores(int quantidade) {
+        Scanner scanner = new Scanner(System.in);
+        int[] valores = new int[quantidade];
+
+        System.out.println("Digite os valores:");
+
+        for (int i = 0; i < quantidade; i++) {
+            valores[i] = scanner.nextInt();
+        }
+
+        return valores;
+    }
+
+    public static int encontrarMaiorValor(int[] valores) {
+        int maior = valores[0];
+
+        for (int i = 1; i < valores.length; i++) {
+            if (valores[i] > maior) {
+                maior = valores[i];
+            }
+        }
+
+        return maior;
+    }
+
+    public static int encontrarMenorValor(int[] valores) {
+        int menor = valores[0];
+
+        for (int i = 1; i < valores.length; i++) {
+            if (valores[i] < menor) {
+                menor = valores[i];
+            }
+        }
+
+        return menor;
+    }
+}
