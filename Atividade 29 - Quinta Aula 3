@@ -1,0 +1,21 @@
+debitos = 0
+creditos = 0
+
+while True:
+  codigo = int(
+    input("Digite o código (1 para débito, 2 para crédito, 0 para fim): "))
+  if codigo == 0:
+    break
+  valor = float(input("Digite o valor: "))
+  if codigo == 1:
+    debitos += valor
+  elif codigo == 2:
+    creditos += valor
+  else:
+    print("Código inválido.")
+
+saldo = creditos - debitos
+
+print("Total de débitos:", debitos)
+print("Total de créditos:", creditos)
+print("Saldo:", saldo)
