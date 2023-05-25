@@ -1,0 +1,17 @@
+public class Main {
+    public static void main(String[] args) {
+        int valor = 5;
+        int somatorio = calcularSomatorio(valor);
+        System.out.println("Somatório de " + valor + ": " + somatorio);
+    }
+
+    public static int calcularSomatorio(int valor) {
+        int somatorio = 0;
+
+        for (int i = 1; i <= valor; i++) {
+            somatorio += i;
+        }
+
+        return somatorio;
+    }
+}
