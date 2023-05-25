@@ -1,0 +1,15 @@
+notas = []
+codigo = int(input("Digite o código do aluno (ou 0 para sair): "))
+while codigo != 0:
+    nota1 = float(input("Digite a primeira nota do aluno: "))
+    nota2 = float(input("Digite a segunda nota do aluno: "))
+    nota3 = float(input("Digite a terceira nota do aluno: "))
+    media = (nota1 + nota2 + nota3) / 3
+    notas.append(media)
+    codigo = int(input("Digite o código do aluno (ou 0 para sair): "))
+
+if len(notas) > 0:
+    media_classe = sum(notas) / len(notas)
+    print("A média aritmética das notas da classe é:", media_classe)
+else:
+    print("Nenhuma nota foi informada.")
